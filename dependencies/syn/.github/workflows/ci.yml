@@ -20,7 +20,7 @@ jobs:
     name: Tests
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
@@ -93,7 +93,7 @@ jobs:
     name: Examples
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
@@ -107,7 +107,7 @@ jobs:
     name: Documentation
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     env:
       RUSTDOCFLAGS: -Dwarnings
@@ -123,7 +123,7 @@ jobs:
     name: Codegen
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
@@ -135,7 +135,7 @@ jobs:
     name: Minimal versions
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
@@ -147,7 +147,7 @@ jobs:
     name: Fuzz
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
@@ -159,7 +159,7 @@ jobs:
     name: Miri
     needs: pre_ci
     if: needs.pre_ci.outputs.continue
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
@@ -171,7 +171,7 @@ jobs:
 
   clippy:
     name: Clippy
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     if: github.event_name != 'pull_request'
     timeout-minutes: 45
     steps:
@@ -184,7 +184,7 @@ jobs:
 
   outdated:
     name: Outdated
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     if: github.event_name != 'pull_request'
     timeout-minutes: 45
     steps:
