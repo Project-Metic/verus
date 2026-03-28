@@ -1,2 +1,3 @@
-/.github/CODEOWNERS @parno @Chris-Hawblitzel @tjhance
-/source/cargo-verus/** @mkovaxx
+# CODEOWNERS — all changes require review from the Project-Metic engineering team.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+*   @Project-Metic/engineers
