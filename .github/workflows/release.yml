@@ -67,3 +67,14 @@ jobs:
               --data-binary @$asset_name \
               "https://uploads.github.com/repos/verus-lang/verus/releases/$new_release_id/assets?name=$asset_name"
           done
+
+      - name: Generate SBOM
+        run: |
+          pip install cyclonedx-bom
+          cyclonedx-py poetry --outfile sbom.json --format json
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-${{ github.sha }}
+          path: sbom.json
+          retention-days: 90
